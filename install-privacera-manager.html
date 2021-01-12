@@ -1,0 +1,339 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Install Privacera Manager · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="create-privacera-manager-host/" />
+    
+    
+    <link rel="prev" href="privacera-manager-framework.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Initial page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="untitled-1.html">
+            
+                <a href="untitled-1.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="privacera-manager-framework.html">
+            
+                <a href="privacera-manager-framework.html">
+            
+                    
+                    Privacera Manager Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="install-privacera-manager.html">
+            
+                <a href="install-privacera-manager.html">
+            
+                    
+                    Install Privacera Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="create-privacera-manager-host/">
+            
+                <a href="create-privacera-manager-host/">
+            
+                    
+                    Create Privacera Manager Host
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="create-privacera-manager-host/untitled-3.html">
+            
+                <a href="create-privacera-manager-host/untitled-3.html">
+            
+                    
+                    (AWS) Create Privacera Manager Host
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="create-privacera-manager-host/untitled.html">
+            
+                <a href="create-privacera-manager-host/untitled.html">
+            
+                    
+                    (Azure) Create Privacera Manager Host
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Install Privacera Manager</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="install-privacera-manager">Install Privacera Manager</h1>
+<h2 id="process-overview-">Process Overview <a id="h2_1509357482"></a></h2>
+<p>Privacera Manager provides a framework, process, installation components, configuration scripts, and property files for deploying, installing, and managing the deployment of all other Privacera components to target environments. Working within the Privacera Manager framework, you identify Privacera Platform components to be installed, configure those components by editing the properties files, and then invoking Privacera Manager. </p>
+<p>The general process for Privacera Manager is very similar for AWS and Azure,  but is adjusted for each.  The first step is to let Privacera Manager know the Cloud platform it is operating in. </p>
+<p>Privacera Manager itself is deployed using <a href="https://docs.docker.com/" target="_blank">Docker</a> with <a href="https://docs.docker.com/compose/" target="_blank">Docker Compose</a>.  Once Privacera Manager is in place, it then runs and deploys Privacera Platform components either as Docker containers or within a Kubernetes cluster, so the second step is to select a preferred deployment.  The choice will depend on your deployment objectives,  target cloud platform and data repository types, and specific Privacera components.   After selecting your cloud platform, the second step is to select a deployment:</p>
+<p>a) Docker/Docker Compose will be the right choice for smaller &apos;single-node&apos; configurations. A single-node, Docker deployed Privacera Platform uses fewer resources, but may not scale as well.</p>
+<p>b) A Kubernetes deployed Privacera Platform may use more resources but will scale, taking advantage of Kubernetes&apos; ability to expand and add computation, memory, and storage resources, as needed. </p>
+<p>In addition to the &apos;core&apos; functions:  Access Management, Discovery, and Encryption,  there are integration options for data repository systems, authentication integration options (AD/LDAP), optional SSO, security options, and audit logging options.   Privacera Manager provides individual configuration files to support each of these options. </p>
+<p>This document will help you select the method and the correct components for your environment. </p>
+<p>The rest of this user guide will provide specific installation steps.  The basic installation sequence is:</p>
+<p>(1) Identify the target cloud platform;</p>
+<p>(2) Select either a Docker or Kubernetes component deployment;</p>
+<p>(3) Create a Privacera Manager &apos;host&apos; virtual machine running your cloud environment with sufficient privileges to deploy and connect to the target data repositories.</p>
+<pre><code> \(3a\) Configure the host system for Privacera Manager:  
+         -  Install Docker &amp; Docker Compose
+</code></pre><p>(4) Download and install Privacera Manager;</p>
+<p>(5) Run Privacera Manager to deploy and start core modules.</p>
+<p>(6) After core modules are up and running, continue to configure additional modules and run Privacera Manager to update the deployment.  </p>
+<pre><code> \(6a\) Locate matching configuration files and configure for your environment;
+
+ \(6b\) Run Privacera Manager in &apos;update&apos; mode.
+</code></pre><h2 id="whats-next---create-the-privacera-manager-host-">Whats Next - Create the Privacera Manager Host <a id="h2_1620375428"></a></h2>
+<p>The next step is to create a Privacera Manager host system in your cloud environment.  This will be used to run Privacera Manager.  If a Docker/Docker Compose deployment is selected, it will also become the Privacera Platform host.  </p>
+<p>If your cloud platform is AWS jump to the topic <a href="docker-installation-for-aws.html">Create Privacera Manager Host (AWS)</a>.</p>
+<p>If your cloud platform is Azure, jump to topic <a href="docker-installation-for-azure.html">Create Privacera Manager Host (Azure)</a>.</p>
+<p> &#xA9; Privacera, Inc. All rights reserved.  </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="privacera-manager-framework.html" class="navigation navigation-prev " aria-label="Previous page: Privacera Manager Framework">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="create-privacera-manager-host/" class="navigation navigation-next " aria-label="Next page: Create Privacera Manager Host">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Install Privacera Manager","level":"1.4","depth":1,"next":{"title":"Create Privacera Manager Host","level":"1.5","depth":1,"path":"create-privacera-manager-host/README.md","ref":"create-privacera-manager-host/README.md","articles":[{"title":"(AWS) Create Privacera Manager Host","level":"1.5.1","depth":2,"path":"create-privacera-manager-host/untitled-3.md","ref":"create-privacera-manager-host/untitled-3.md","articles":[]},{"title":"(Azure) Create Privacera Manager Host","level":"1.5.2","depth":2,"path":"create-privacera-manager-host/untitled.md","ref":"create-privacera-manager-host/untitled.md","articles":[]}]},"previous":{"title":"Privacera Manager Framework","level":"1.3","depth":1,"path":"privacera-manager-framework.md","ref":"privacera-manager-framework.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"install-privacera-manager.md","mtime":"2021-01-12T17:15:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-12T18:23:12.766Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
